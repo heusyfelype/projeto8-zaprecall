@@ -11,6 +11,10 @@ export default function SegundaTela(){
             <section className="deck-de-perguntas">
                 <PerguntasMap/>
             </section>
+
+            <footer>
+                <div> 0/4 CONCLUÍDOS </div>
+            </footer>
         </>
     )
 }
