@@ -23,57 +23,58 @@ export default function SegundaTela() {
 function PerguntasMap() {
     const arrPergEResp = Perguntas();
     let contador = 0;
-
-    const [index, setIndex] = React.useState(0)
-    function aumentarIndex() {
-        setIndex(index + 1)
-    }
-    let indice = 0;
-
     return (
         arrPergEResp.map(objeto => {
             contador++
-            return (<Pergunta arrPergEResp={arrPergEResp} contador={contador} aumentarIndex={aumentarIndex} index={index} indice={indice} />
+            return (<Pergunta 
+                arrPergEResp={arrPergEResp} 
+                contador={contador} />
             )
         })
     )
 }
 
 function Pergunta(props) {
-    let { arrPergEResp, contador, aumentarIndex, index, indice } = props;
+    let { arrPergEResp, contador} = props;
+    
+    function transformarCards(valorMostrarCard) {
+        return (
+            <div className="pergunta">
+                <CadaCard 
+                arrPergEResp={arrPergEResp} 
+                contador={contador}/>
+            </div>
+        )
+    }
+    let valorMostrarCard = 0;
+    return (transformarCards(valorMostrarCard))
+}
+
+function CadaCard(props) {
+    let {arrPergEResp, contador} = props;
+    console.log("contador: " + contador) 
     const [mostrarCard, setMostrarCard] = React.useState(0);
 
-    console.log(arrPergEResp, "index: " + index, "INDICE: " + indice)
-
-
     function abrirPergunta(valor) {
-        setMostrarCard(1)
-        indice = indice + 1
+        setMostrarCard(mostrarCard + valor)
     }
 
-    function transformarCards(valorMostrarCard) {
-        switch (valorMostrarCard) {
-            case 0: return (
-                <div className="pergunta">
-                    <h1>Pergunta {contador} </h1>
-                    <ion-icon name="play-outline" onClick={() => { abrirPergunta(1); aumentarIndex(); }} ></ion-icon>
-                </div>
-            );
-            case 1: return (
-                <div className="pergunta">
-                    <h1> {arrPergEResp[index].pergunta} </h1>
-                </div>
-            );
-        }
+    switch (mostrarCard) {
+        case 0: return (
+            <>
+                <h1>Pergunta {contador} </h1>
+                <ion-icon name="play-outline" onClick={() => { abrirPergunta(1); }} ></ion-icon>
+            </>
+        );
+        case 1: return (
+            <>
+                <h1 onClick={() => { abrirPergunta(1); }} > {arrPergEResp[contador-1].pergunta} </h1>
+            </>
+        );
+        case 2: return (
+            <>
+                <h1 onClick={() => { abrirPergunta(2); }} > {arrPergEResp[contador-1].resposta} </h1>
+            </>
+        );
     }
-
-
-    return (transformarCards(mostrarCard)
-        /*
-            A ideia aqui é adicionar um onclick no ion icon
-            quando clicado ele altera um contador, usando a tecnca do useState.
-            isso esonde o h1 e o ion-icon, dps mostra a frente do card
-            ao clicar pra virar o card, a frente volta a ser escondida e o verso é mostrado
-        */
-    )
 }
