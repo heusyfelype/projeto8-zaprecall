@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Recursive:wght@400;700&family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Recursive:CASL@1&displayfamily=Righteous&display=swap');
 
 * {
     box-sizing: border-box;
@@ -7,7 +7,9 @@
 .root {
     background-color: #FB6B6B;
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
+    overflow-y: scroll;
+    padding-bottom: 100px;
 }
 
 .tela-inicial {

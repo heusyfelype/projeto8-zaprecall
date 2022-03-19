@@ -17,7 +17,7 @@ export default function Perguntas(){
     }
     let objt5 = {
         pergunta: "O ReactDOM nos ajuda __ ",
-        resposta: "nteragindo com a DOM para colocar componentes React na mesma",
+        resposta: "interagindo com a DOM para colocar componentes React na mesma",
     }
     let objt6 = {
         pergunta: "Usamos o npm para __ ",
@@ -29,10 +29,16 @@ export default function Perguntas(){
     }
     let objt8 = {
         pergunta: "Usamos estado (state) para __ ",
-        resposta: "dizer para o React quais informações quando atualizadas devem renderizar a tela novamente",
+        resposta: "dizer para o React quais informações quando atualizadas devem renderizar a tela novamente dflkjglkdsfjhlkjdfghkjfdhgdfgh kldsjhlksd jkjdsfh kljfdshk jhdkjsflhkljdsfh kljdfhgkljdhkgjdsfkgshd fkjghdfklj ghkdljfh kfdjh gklfdjh gkljdfhg kdjsfh kljdsf hgkjldsfh gkljdsfh gkjdhf",
     }
     
     let arrDeck = [objt1, objt2, objt3, objt4, objt5, objt6, objt7, objt8]
+    function shuffleArray(inputArray){
+        return inputArray.sort(()=> Math.random() - 0.5);
+    }
+    arrDeck = shuffleArray(arrDeck)
+    
 
     return arrDeck;
 }
+

@@ -22,12 +22,15 @@
 
 .deck-de-perguntas {
     width: 90%;
+    max-width: 340px;
     margin: 10vh auto 0px auto;
-    
+
 }
 
 .deck-de-perguntas .pergunta {
-    height: 40px;
+    min-height: 40px;
+    max-height: 65px;
+    height: 8vh;
     background: #FFFFFF;
     box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
     border-radius: 5px;
@@ -42,18 +45,22 @@
     font-weight: 700;
     font-size: 12px;
     color: #333333;
+
+    transition: all;
 }
 
-.deck-de-perguntas ion-icon{
-    font-size: 15px;
+ion-icon[name="play-outline"] {
+    font-size: 20px;
+    padding: 5px;
     color: #333333;
-    --ionicon-stroke-width: 50px;
+    --ionicon-stroke-width: 40px;
 }
 
-footer{
+
+footer {
     width: 100vw;
     height: 50px;
-    position: absolute;
+    position: fixed;
     bottom: 0px;
     left: 0px;
     background-color: #FFFFFF;
@@ -64,9 +71,101 @@ footer{
     justify-content: center;
 }
 
-footer div{
+footer div {
     font-family: 'Recursive';
     font-weight: 700;
     font-size: 12px;
     color: #333333;
 }
+
+.card-amarelo {
+    min-height: 80px;
+    background: #FFFFD4;
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    margin: 5px;
+    padding: 15px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 5px;
+
+
+    font-family: 'Recursive';
+    font-weight: 700;
+    font-size: 12px;
+    color: #333333;
+
+    position: relative;
+}
+
+.seta-virar-card {
+    width: 20px;
+    position: absolute;
+    right: 10px;
+    bottom: 5px;
+    /* grid-template-columns: 1fr */
+}
+
+.texto {
+    grid-column: 1 / 4;
+}
+
+.estatus-da-lembranca {
+    grid-column: 1fr;
+}
+
+.nao-lembrei {
+    width: 100%;
+    background: #FF3030;
+    border: none;
+    border-radius: 5px;
+    color: #FFFFFF;
+}
+
+.qse-nao-lembrei {
+    width: 100%;
+    background: #FF922E;
+    border: none;
+    border-radius: 5px;
+    color: #FFFFFF;
+
+}
+
+.zap {
+    width: 100%;
+    background: #2FBE34;
+    border: none;
+    border-radius: 5px;
+    color: #FFFFFF;
+}
+
+.tachado{
+    text-decoration: line-through;
+}
+
+ion-icon[name="close-circle"]{
+    color: #FF3030;
+}
+
+.color-red{
+    color: #FF3030;
+}
+
+ion-icon[name="help-circle"]{
+    color:  #FF922E;
+}
+
+.color-orange{
+    color: #FF922E;
+}
+
+
+ion-icon[name="checkmark-circle"]{
+    color: #2FBE34;
+}
+
+.color-green{
+    color: #2FBE34;
+}
+
