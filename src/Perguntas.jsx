@@ -29,7 +29,7 @@ export default function Perguntas(){
     }
     let objt8 = {
         pergunta: "Usamos estado (state) para __ ",
-        resposta: "dizer para o React quais informações quando atualizadas devem renderizar a tela novamente dflkjglkdsfjhlkjdfghkjfdhgdfgh kldsjhlksd jkjdsfh kljfdshk jhdkjsflhkljdsfh kljdfhgkljdhkgjdsfkgshd fkjghdfklj ghkdljfh kfdjh gklfdjh gkljdfhg kdjsfh kljdsf hgkjldsfh gkljdsfh gkjdhf",
+        resposta: "dizer para o React quais informações quando atualizadas devem renderizar a tela novamente",
     }
     
     let arrDeck = [objt1, objt2, objt3, objt4, objt5, objt6, objt7, objt8]
